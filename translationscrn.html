@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--<link href="css/bootstrap.min.css" rel="stylesheet"/>-->
+    
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title> Language Translator Mobile App</title>
+
+</head> 
+
+<body>
+    <div class="content grey">
+        <a href="index.html"><img src="images/back.png" id="backbtn"></a>
+        <a href="index.html"><img src="images/homebtn.png" id="homebtn"></a>
+        <p id="txtimg">text extracted from image</p>
+        <div class="textarea">
+            <!-- extracted text goes to p#extractedtext -->
+            <p class="translatortxt" id="extractedtext">extracted text goes here eg. <br>somebody touche my spaghet</p>
+        </div>
+        <div class="replayaudiobg">
+            <img src="images/replayaudio.png" class="replayaudio">
+        </div>
+        <div class="flexbox">
+            <p id="txtautodetect">Auto-detected</p><p id="translateunicode">⇄</p><p id="language">English</p>
+        </div>
+        <div class="textarea">
+            <!-- translated text goes to p#translatedtext -->
+            <p class="translatortxt" id="translatedtext">
+                translation here eg. <br>
+                someone has touched his spaghet
+            </p>
+        </div>
+        <div class="replayaudiobg">
+            <img src="images/replayaudio.png" class="replayaudio">
+        </div>
+    </div>
+   
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<!--
+    <script src="js/bootstrap.min.js"></script>
+-->
+    
+</body>
+</html>

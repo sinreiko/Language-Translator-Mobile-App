@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>yes</title>
+        <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"</script>
+        <script src="sync-request.json"></script>-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> <!-- link jQuery -->
+        <script src="bundle.js"></script>
+    </head>
+
+    <body>
+        
+        <div id="results">Your captured image will appear here...</div>
+
+        <div id="my_camera" style="width: 320px; height: 240px;">
+        <video autoplay="autoplay" playsinline="playsinline" src="blob:https://pixlcore.com/4674cc42-e387-4fd7-8d72-fa62f68ac3a3" style="width: 320px; height: 240px;"></video>
+        </div>
+        
+    
+
+    <!----------------- Scriptssssssss-->
+        <script src="webcamjs-master/webcam.min.js"></script>
+
+        <script>
+		Webcam.set({
+			width: 320,
+			height: 240,
+			image_format: 'jpeg',
+			jpeg_quality: 90
+		});
+		Webcam.attach( '#my_camera' );
+	   </script>
+	<!-- A button for taking snaps -->
+    <form>
+		<input type="button" value="Take Snapshot" onclick="take_snapshot()">
+	</form>
+    <script>
+        var base64;
+
+        function take_snapshot() {
+            // take snapshot and get image data
+            Webcam.snap( function(data_uri) {
+                var uri = data_uri;
+                if (uri.search("jpeg") != -1) { // "jpeg" exists within uri
+                    base64 = uri.replace("data:image/jpeg;base64,", "");
+                }
+                else if (uri.search("png") != -1) { // "png" exists within uri
+                    base64 = uri.replace("data:image/png;base64,", "");
+                }
+                console.log(base64);
+
+                // display results in page
+                document.getElementById('results').innerHTML = 
+                    '<h2>Here is your image:</h2>' + 
+                    '<img src="'+data_uri+'"/>';
+            } );
+        }
+        
+        /*function getBase64Image(img) {
+              var canvas = document.createElement("canvas");
+              canvas.width = img.width;
+              canvas.height = img.height;
+              var ctx = canvas.getContext("2d");
+              ctx.drawImage(img, 0, 0);
+              var dataURL = canvas.toDataURL("image/png");
+              return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+        }
+
+        var base64 = getBase64Image(data_uri);*/
+	</script>
+    
+    </body>
+
+</html>

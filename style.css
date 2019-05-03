@@ -1,0 +1,179 @@
+body {
+    height: 100%;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    color: white;
+    font-size: 1.1rem;
+    overflow:hidden;
+}
+
+.content {
+    position: absolute; 
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
+    width: 100%; /* Need a specific value to work */
+    height: 100%;
+}
+
+.content.grey {
+    background-color: #494947; /* grey */
+}
+
+.homescrn {
+    background-image: url(images/bg.png);
+    
+    /* Center and scale the image */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;  
+    z-index: 1;
+}
+
+.wrapper {
+    height: 100%;
+    width: 100%;
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.block {
+    height: 25%;
+    display: flex;
+}
+
+.block#block-settings {
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.block#mainbtns {
+    justify-content: center;
+}
+
+.img-wrapper {
+    transform: scale(0.8, 0.8);
+    height: 40%;
+}
+
+.img-wrapper#imgwrapper-themes {
+    margin-left: 2%;
+    margin-top: 2%;
+}
+
+.img-wrapper#imgwrapper-camera {
+    margin-top: 5%;
+}
+
+.img-wrapper#imgwrapper-rec {
+    margin-top: 18%;
+}
+
+.img-wrapper#imgwrapper-settings {
+    margin-right: 2%;
+    margin-bottom: 2%;
+}
+
+/*                      */
+.clickablearea {
+    z-index: 100;
+}
+
+.layout{
+    background-color: rgba(0,0,0,0);
+}
+.block{
+    width: 200%;
+    transform-origin: -1% 100%;
+    transform:rotate(-18deg);
+    margin-bottom: 12%; /* or 9%? */
+    margin-top: 0;
+}
+.block.blue{
+    background-color: rgba(125,0,0.9);
+    height: 141px;
+}
+.block.green{
+    background-color: rgba(125,0,0.9);
+    height: 141px;
+    
+}
+.block.red{
+    background-color: rgba(0,0,0,0);
+    height: 0px;
+}
+/*                     */
+
+#backbtn {
+    margin-top: 4%;
+    margin-left: 4%;
+}
+
+#homebtn {
+    position: absolute;
+    top: 0;
+    right: -5px;
+}
+
+p#txtimg {
+    text-align: center;
+    margin: 7% 0 3%;
+}
+
+.flexbox {
+    display: flex;
+    flex-direction: row;
+    padding: 4% 0 4%;
+}
+
+p#txtautodetect {
+    width: 40%;
+    margin: 0 1% 0 6%;
+    height: 1.1rem;
+}
+
+p#translateunicode {
+    height: 1.1rem;
+    margin: 0;
+}
+
+p#language {
+    height: 1.1rem;
+    margin: 0 auto;
+}
+
+div.textarea { 
+    background-color: #70C1B3; /* green */
+    width: 100%;
+    height: 26%;
+}
+
+p.translatortxt { /* text within the green boxes */
+    margin: 0;
+    padding: 15px 20px;
+}
+
+.replayaudiobg {
+    background: #F7925D; /* for browsers that do not support gradient */
+    background-image: -moz-linear-gradient(to right, #F7925D, #FF1654, #247BA0);
+    background-image: -o-linear-gradient(to right, #F7925D, #FF1654, #247BA0);
+    background-image: -webkit-linear-gradient(to right, #F7925D, #FF1654, #247BA0);
+    background-image: linear-gradient(to right, #F7925D, #FF1654, #247BA0);
+    display: flex;
+    justify-content: flex-end;
+    height: 8%;
+}
+
+.replayaudio {
+    align-self: center;
+    margin-right: 3%;
+}
+
+#file-input {
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+}
